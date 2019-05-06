@@ -2,14 +2,21 @@ apt update
 apt upgrade
 apt install -y git make curl
 curl -sL https://deb.nodesource.com/setup_8.x | bash
+read -p "ENTER 'a bas."
 apt install -y nodejs
+read -p "ENTER 'a bas."
 apt install -y libavahi-compat-libdnssd-dev
+read -p "ENTER 'a bas."
 npm install -g --unsafe-perm homebridge
+read -p "ENTER 'a bas."
 npm i homebridge-config-ui-x
+read -p "ENTER 'a bas."
 touch .homebridge/config.json
+read -p "ENTER 'a bas."
 echo "{"bridge": {"name": "***EV***","username": "***BILGISAYARIN MAC ADRESI***","port": 18181,"pin": "012-34-567"},"description": "***ORNEK AYARLAR***","ports": {"start": 18200,"end": 18300,"comment": "test","accessories": [{"accessory": "Termometre","name": "Termometre"}],"platforms": [{"platform": "config","name": "Config""port": "8080"}]}}" > .homebridge/config.json
-
+read -p "ENTER 'a bas."
 nano .homebridge/config.json
+read -p "ENTER 'a bas."
 touch /etc/default/homebridge
 echo "# Defaults / Configuration options for homebridge" >> /etc/default/homebridge
 echo "# The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)" >> /etc/default/homebridge
