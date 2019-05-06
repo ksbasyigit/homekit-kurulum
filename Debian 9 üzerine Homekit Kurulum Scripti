@@ -6,10 +6,11 @@ apt install -y nodejs
 apt install -y libavahi-compat-libdnssd-dev
 npm install -g --unsafe-perm homebridge
 npm i homebridge-config-ui-x
+touch .homebridge/config.json
 echo "{"bridge": {"name": "***EV***","username": "***BILGISAYARIN MAC ADRESI***","port": 18181,"pin": "012-34-567"},"description": "***ORNEK AYARLAR***","ports": {"start": 18200,"end": 18300,"comment": "test","accessories": [{"accessory": "Termometre","name": "Termometre"}],"platforms": [{"platform": "config","name": "Config""port": "8080"}]}}" > .homebridge/config.json
 
 nano .homebridge/config.json
-
+touch /etc/default/homebridge
 echo "# Defaults / Configuration options for homebridge" >> /etc/default/homebridge
 echo "# The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)" >> /etc/default/homebridge
 echo "HOMEBRIDGE_OPTS=-U /var/homebridge */" >> /etc/default/homebridge
@@ -57,6 +58,7 @@ wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/reso
 wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/node-red-stop -O /usr/bin/node-red-stop
 chmod +x /usr/bin/node-red-st*
 
+touch /lib/systemd/system/nodered.service
 echo "[Unit]" >> /lib/systemd/system/nodered.service
 echo "Description=Node-RED by Sertan" >> /lib/systemd/system/nodered.service
 echo "Wants=network.target" >> /lib/systemd/system/nodered.service
